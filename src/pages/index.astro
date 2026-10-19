@@ -1,0 +1,831 @@
+---
+import SiteHead from '../components/SiteHead.astro'
+import SiteFoot from '../components/SiteFoot.astro'
+import SiteScrollbar from '../components/SiteScrollbar.astro'
+import SHero from '../components/SHero.astro'
+import SAbout from '../components/SAbout.astro'
+import SWork from '../components/SWork.astro'
+import SMyWay from '../components/SMyWay.astro'
+import SCTA from '../components/SCTA.astro'
+import ASeparator from '../components/ASeparator.astro'
+
+import '../styles/global.scss'
+---
+
+<html lang="en" class="is-scroll-blocked theme-contrasted">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Harsh Kumar / FullStack Developer, Open Source Contributor & Backend Engineer</title>
+
+    <meta
+      name="description"
+      content="Harsh Kumar / FullStack Developer, Open Source Contributor & Backend Engineer. Active contributor to CNCF organizations (Kubernetes, Cilium, Kyverno, Antrea, Kubescape) and builder of high-scale backend distributed systems. Based in Delhi / Mumbai, India." />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=3" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/icons/favicon-48x48.png?v=3"
+      sizes="48x48"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/icons/favicon-96x96.png?v=3"
+      sizes="96x96"
+    />
+    <link rel="shortcut icon" href="/icons/favicon.ico?v=3" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icons/apple-touch-icon.png?v=3"
+    />
+    <link rel="manifest" href="/icons/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="Harsh Kumar" />
+
+    <meta name="theme-color" content="#08090a" />
+    <meta name="msapplication-navbutton-color" content="#08090a" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#08090a" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Harsh Kumar / FullStack Developer, Open Source Contributor & Backend Engineer" />
+    <meta property="og:description" content="FullStack Developer, Open Source Contributor & Backend Engineer. CNCF contributor to Kubernetes, Cilium, Kyverno, Antrea, Kubescape. Based in Delhi / Mumbai, India." />
+    <meta property="og:site_name" content="Harsh Kumar Portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link
+      rel="preload"
+      href="/fonts/PPEditorialNew-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/PPEditorialNew-Ultralight.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/PPFraktionMono-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/PPFraktionMono-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Bigger-Display.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="site-wrapper js-site-wrapper" style="opacity: 0;">
+      <SiteHead />
+
+      <SHero />
+
+      <SAbout />
+
+      <ASeparator style="secondary" />
+
+      <SWork />
+
+      <ASeparator style="secondary" />
+
+      <SMyWay />
+
+      <SCTA />
+
+      <SiteFoot />
+    </div><!-- .site-wrapper -->
+
+    <div
+      class="site-intro js-intro"
+      style="opacity: 1; position: fixed; top: 0; left: 0; z-index: 50; width: 100%; height: 100%; background: #F4EFEA;"
+    >
+      <div class="intro-loader js-intro-loader">
+        <div class="intro-loader__brand">
+          <div class="intro-loader__title-motion js-loader-motion-word">
+            harshakumar25
+          </div>
+        </div>
+
+        <div class="intro-loader__hud">
+          <div class="intro-loader__meta">
+            <span class="intro-loader__title">HARSH KUMAR // PORTFOLIO</span>
+            <span class="intro-loader__percent js-loader-percent">00%</span>
+          </div>
+
+          <div class="intro-loader__bar">
+            <div class="intro-loader__fill js-loader-fill"></div>
+          </div>
+
+          <div class="intro-loader__status js-loader-status">
+            INITIALIZING ARCHITECTURE
+          </div>
+        </div>
+      </div><!-- .intro-loader -->
+
+      <div class="site-intro__border site-intro__border--top js-border-top">
+      </div>
+      <div class="site-intro__border site-intro__border--left js-border-left">
+      </div>
+      <div class="site-intro__border site-intro__border--right js-border-right">
+      </div>
+    </div><!-- .site-intro -->
+
+    <div class="site-mount js-mount"></div>
+    <div class="site-contrast-mask js-contrast-mask"></div>
+
+    <SiteScrollbar />
+  </body>
+
+  <script>
+    import Emitter from '../utils/Emitter'
+    import Ticker from '../utils/Ticker'
+
+    import Lenis from 'lenis'
+
+    import { gsap } from 'gsap'
+    import { ScrollTrigger } from 'gsap/ScrollTrigger'
+    import { SplitText } from 'gsap/SplitText'
+    gsap.registerPlugin(ScrollTrigger, SplitText)
+
+    declare global {
+      interface Window {
+        safeWidth: number
+        safeHeight: number
+        maxScrollTop: number
+        scrollProgress: number
+        lenis: any
+      }
+    }
+
+    class Site {
+      timeouts: any = {
+        resizeThrottle: null,
+      }
+
+      windowWidth: number
+      windowHeight: number
+      clientWidth: number
+      clientHeight: number
+
+      isScrolling: boolean = false
+
+      lenis: any
+
+      /**
+       * Constructor
+       */
+      constructor() {
+        // OS class
+        let os = 'unknown'
+        if (navigator.userAgent.indexOf('Win') !== -1) {
+          os = 'windows'
+        } else if (navigator.userAgent.indexOf('Android') !== -1) {
+          os = 'android'
+        } else if (navigator.userAgent.indexOf('Mac') !== -1) {
+          os = 'mac'
+        } else if (navigator.userAgent.indexOf('Linux') !== -1) {
+          os = 'linux'
+        }
+        document.documentElement.classList.add(`is-${os}`)
+
+        // Browser class
+        let browser = 'unknown'
+        if (navigator.userAgent.indexOf('Firefox') !== -1) {
+          browser = 'firefox'
+        } else if (navigator.userAgent.indexOf('Chrome') !== -1) {
+          browser = 'chrome'
+        } else if (navigator.userAgent.indexOf('Safari') !== -1) {
+          browser = 'safari'
+        }
+        document.documentElement.classList.add(`is-${browser}`)
+
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual'
+        }
+        window.scrollTo(0, 0)
+
+        this.bindEvents()
+      }
+
+      /**
+       * Initialization
+       */
+      init() {
+        this.initLenis()
+
+        Ticker.init()
+
+        this.onResize()
+        Ticker.nextTick(this.intro, this)
+      }
+
+      /**
+       * Bind events
+       */
+      bindEvents() {
+        window.addEventListener('resize', this.resizeThrottle.bind(this))
+        window.addEventListener('scroll', this.onScroll.bind(this), {
+          passive: true,
+        })
+        window.addEventListener('mousemove', this.onMouseMove.bind(this), {
+          passive: true,
+        })
+
+        Emitter.on('updateViewport', this.onResize, this, true)
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              entry.target.dispatchEvent(
+                new CustomEvent('intersect', {
+                  detail: { isIntersecting: entry.isIntersecting },
+                })
+              )
+
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-in-view')
+                entry.target.classList.remove(
+                  'is-out-of-view',
+                  'is-out-of-view-top',
+                  'is-out-of-view-bottom'
+                )
+              } else {
+                entry.target.classList.remove('is-in-view')
+                entry.target.classList.add('is-out-of-view')
+
+                entry.target.classList.toggle(
+                  'is-out-of-view-top',
+                  entry.boundingClientRect.top < 0
+                )
+                entry.target.classList.toggle(
+                  'is-out-of-view-bottom',
+                  entry.boundingClientRect.top > 0
+                )
+              }
+            })
+          },
+          {
+            threshold: 0,
+          }
+        )
+
+        document.querySelectorAll('[data-intersect]').forEach((el) => {
+          observer.observe(el)
+        })
+
+        // Site loaded event
+        if (document.readyState === 'complete') {
+          this.siteLoaded()
+        } else {
+          window.addEventListener('load', this.siteLoaded, { once: true })
+        }
+
+        this.onScroll()
+      }
+
+      /**
+       * Init lenis
+       */
+      initLenis() {
+        const lenis = new Lenis()
+
+        lenis.on('scroll', ScrollTrigger.update)
+
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000)
+        })
+
+        gsap.ticker.lagSmoothing(0)
+
+        window.lenis = lenis
+        this.lenis = lenis
+      }
+
+      /**
+       * Set loaded class
+       */
+      siteLoaded() {
+        document.documentElement.classList.add('is-loaded')
+
+        Emitter.emit('siteLoaded')
+      }
+
+      /**
+       * Resize throttle
+       */
+      resizeThrottle() {
+        clearTimeout(this.timeouts.resizeThrottle)
+
+        this.timeouts.resizeThrottle = setTimeout(() => {
+          Ticker.nextTick(this.onResize, this)
+        }, 200)
+      }
+
+      /**
+       * Resize handler
+       */
+      onResize() {
+        const newWidth = window.innerWidth
+        let widthChanged = false
+        if (this.windowWidth !== newWidth) {
+          if (this.windowWidth !== undefined) {
+            widthChanged = true
+          }
+
+          this.windowWidth = newWidth
+          this.clientWidth = document.body.clientWidth
+        }
+
+        const newHeight = window.innerHeight
+        let heightChanged = false
+        if (this.windowHeight !== newHeight) {
+          if (this.windowHeight !== undefined) {
+            heightChanged = true
+          }
+
+          this.windowHeight = newHeight
+          this.clientHeight = document.body.clientHeight
+        }
+
+        window.safeWidth = newWidth
+        window.safeHeight = newHeight
+
+        window.maxScrollTop = document.body.scrollHeight - window.safeHeight
+
+        this.setScrollProgress()
+
+        Emitter.emit('resize', widthChanged, heightChanged)
+      }
+
+      /**
+       * Scroll handler
+       */
+      onScroll() {
+        this.setScrollProgress()
+
+        Ticker.nextTick(() => {
+          Emitter.emit('scroll', window.scrollY)
+        })
+      }
+
+      /**
+       * Set scroll progress
+       */
+      setScrollProgress() {
+        window.scrollProgress = window.scrollY / window.maxScrollTop
+      }
+
+      /**
+       * Mouse move handler
+       */
+      onMouseMove(e) {
+        Emitter.emit('mousemove', e.clientX, e.clientY)
+      }
+
+      /**
+       * Intro
+       */
+      intro() {
+        // Selectors
+        const wrapper: HTMLElement = document.querySelector('.js-site-wrapper')
+        const intro: HTMLElement = document.querySelector('.js-intro')
+        const mount: HTMLElement = document.querySelector('.js-mount')
+        const loader: HTMLElement = intro.querySelector('.js-intro-loader')
+        const loaderWord: HTMLElement = intro.querySelector('.js-loader-motion-word')
+        const loaderFill: HTMLElement = intro.querySelector('.js-loader-fill')
+        const percentEl: HTMLElement = intro.querySelector('.js-loader-percent')
+        const statusEl: HTMLElement = intro.querySelector('.js-loader-status')
+        const borderTop: HTMLElement = intro.querySelector('.js-border-top')
+        const borderLeft: HTMLElement = intro.querySelector('.js-border-left')
+        const borderRight: HTMLElement = intro.querySelector('.js-border-right')
+
+        let loaderChars: HTMLElement[] = []
+
+        if (loaderWord) {
+          const st = new SplitText(loaderWord, {
+            type: 'words,chars',
+            charsClass: 'char',
+            wordsClass: 'word',
+          })
+
+          st.chars.forEach((char: HTMLElement) => {
+            const letter = char.textContent || ''
+            char.classList.add('char--' + letter.toLowerCase())
+
+            const inner = document.createElement('span')
+            inner.classList.add('char__inner')
+            inner.textContent = letter
+
+            char.innerHTML = ''
+            char.appendChild(inner)
+            loaderChars.push(inner)
+          })
+        }
+
+        const progress = { val: 0 }
+
+        // Timeline
+        const tl = gsap.timeline()
+
+        tl.set(wrapper, {
+          opacity: '',
+        })
+
+        tl.set(intro, {
+          background: 'transparent',
+        })
+
+        // Letters emerge and rise in exact lockstep with the progress bar moving from 0% to 100%
+        if (loaderChars.length) {
+          tl.fromTo(
+            loaderChars,
+            {
+              yPercent: 120,
+              opacity: 0,
+            },
+            {
+              yPercent: 0,
+              opacity: 1,
+              duration: 0.65,
+              ease: 'power3.out',
+              stagger: {
+                each: 1.6 / loaderChars.length,
+                from: 'start',
+              },
+            },
+            0.2
+          )
+        }
+
+        // Progress counter and progress bar animation
+        tl.to(
+          progress,
+          {
+            val: 100,
+            duration: 2.3,
+            ease: 'power2.inOut',
+            onUpdate: () => {
+              const current = Math.round(progress.val)
+              const formatted = current < 10 ? `0${current}%` : `${current}%`
+              if (percentEl) percentEl.textContent = formatted
+              if (loaderFill) loaderFill.style.width = `${current}%`
+
+              if (statusEl) {
+                if (current < 30) {
+                  statusEl.textContent = 'INITIALIZING ARCHITECTURE'
+                } else if (current < 65) {
+                  statusEl.textContent = 'LOADING CLOUD NATIVE ASSETS'
+                } else if (current < 95) {
+                  statusEl.textContent = 'CALIBRATING SYSTEM MODULES'
+                } else {
+                  statusEl.textContent = 'SYSTEM READY'
+                }
+              }
+            },
+          },
+          0.2
+        )
+
+        // Framing borders
+        tl.from(
+          borderTop,
+          {
+            scaleY: 0,
+            duration: 2.2,
+            ease: 'power3.inOut',
+          },
+          0.3
+        )
+
+        tl.from(
+          [borderLeft, borderRight],
+          {
+            scaleX: 0,
+            duration: 2.2,
+            ease: 'power3.inOut',
+          },
+          0.3
+        )
+
+        // Smooth exit of loader
+        tl.to(
+          loader,
+          {
+            opacity: 0,
+            scale: 0.94,
+            duration: 0.45,
+            ease: 'power3.in',
+          },
+          2.6
+        )
+
+        // Fire intro event for hero and navbar entrance
+        tl.call(
+          () => {
+            document.dispatchEvent(new CustomEvent('intro'))
+          },
+          null,
+          2.7
+        )
+
+        // Cleanup intro overlay
+        tl.call(
+          () => {
+            mount.style.opacity = '1'
+            intro.remove()
+
+            document.documentElement.classList.remove('is-scroll-blocked')
+
+            Ticker.nextTick(() => {
+              Emitter.emit('updateViewport')
+              if (window.lenis) {
+                window.lenis.resize()
+              }
+              ScrollTrigger.refresh()
+            })
+          },
+          null,
+          3.1
+        )
+      }
+    }
+
+    const site = new Site()
+
+    // Site init on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', site.init, { once: true })
+    } else {
+      site.init()
+    }
+  </script>
+
+  <style lang="scss">
+    body {
+      position: relative;
+
+      padding: 1rem;
+      min-height: 100vh;
+
+      @include mq(phone) {
+        padding: 0.5rem;
+      }
+    }
+
+    .site-contrast-mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 20;
+
+      width: 100%;
+      height: 100%;
+
+      background: map.get($theme-colors, 'default', 'primary');
+      border-color: map.get($theme-colors, 'default', 'secondary');
+      border-style: solid;
+      border-width: 0 1rem 0 0;
+      mix-blend-mode: darken;
+      transform: translate3d(-100%, 0, 0);
+
+      pointer-events: none;
+      will-change: transform;
+
+      @include mq(phone) {
+        border-right-width: 0.5rem;
+      }
+    }
+
+    .site-intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 50;
+
+      width: 100%;
+      height: 100%;
+
+      background: color(primary);
+
+      .intro-loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: min(520px, 92vw);
+        max-width: 92vw;
+
+        &__brand {
+          position: relative;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 2.25rem;
+          color: color(secondary);
+          overflow: hidden;
+
+          @include mq(phone) {
+            margin-bottom: 1.5rem;
+          }
+        }
+
+        &__title-motion {
+          display: inline-flex;
+          align-items: baseline;
+          justify-content: center;
+          white-space: nowrap;
+          cursor: default;
+          font-family: font-family(editorial);
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(2.35rem, 6.5vw, 4rem);
+          line-height: 1.35;
+          letter-spacing: -0.015em;
+          text-transform: lowercase;
+          color: color(secondary);
+          user-select: none;
+          padding: 0.1em 0.35em;
+
+          :global(.word) {
+            position: relative;
+            display: inline-flex;
+            align-items: baseline;
+            justify-content: center;
+            overflow: hidden;
+            height: 1.35em;
+          }
+
+          :global(.char) {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            height: 1.35em;
+            line-height: 1.35;
+            vertical-align: baseline;
+            text-align: center;
+          }
+
+          :global(.char__inner) {
+            position: relative;
+            display: inline-block;
+            line-height: 1.35;
+            color: color(secondary);
+            will-change: transform, opacity;
+          }
+        }
+
+        &__hud {
+          width: 100%;
+          max-width: 400px;
+          display: flex;
+          flex-direction: column;
+          gap: 0.65rem;
+        }
+
+        &__meta {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font: 700 10px / 1 font-family(fraktion);
+          letter-spacing: 0.18em;
+          color: color(secondary);
+          text-transform: uppercase;
+        }
+
+        &__percent {
+          font-variant-numeric: tabular-nums;
+          font-weight: 700;
+        }
+
+        &__bar {
+          position: relative;
+          width: 100%;
+          height: 3px;
+          background: rgba(color(secondary), 0.2);
+          overflow: hidden;
+        }
+
+        &__fill {
+          height: 100%;
+          width: 0%;
+          background: color(secondary);
+          will-change: width;
+        }
+
+        &__status {
+          font: 400 9px / 1 font-family(fraktion);
+          letter-spacing: 0.14em;
+          color: color(secondary);
+          opacity: 0.75;
+          text-transform: uppercase;
+          text-align: center;
+        }
+      }
+
+      &__border {
+        --width: 1rem;
+
+        position: absolute;
+
+        background: color(secondary);
+
+        @include mq(phone) {
+          --width: 0.5rem;
+        }
+
+        &--top {
+          top: 0;
+          left: 0;
+
+          width: 100%;
+          height: var(--width);
+
+          transform-origin: 50% 0;
+        }
+
+        &--left,
+        &--right {
+          top: 0;
+          left: 0;
+
+          width: var(--width);
+          height: 100%;
+        }
+
+        &--left {
+          transform-origin: 0 50%;
+        }
+
+        &--right {
+          left: auto;
+          right: 0;
+
+          transform-origin: 100% 50%;
+        }
+      }
+    }
+
+    .site-wrapper {
+      position: relative;
+      z-index: 2;
+
+      background: color(primary);
+      clip-path: inset(0 -1rem);
+
+      @include mq(phone) {
+        clip-path: inset(0 -0.5rem);
+      }
+    }
+
+    .site-mount {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      width: 100%;
+      height: 100%;
+
+      border: 1rem solid color(secondary);
+
+      opacity: 0;
+      will-change: border-width;
+
+      pointer-events: none;
+    }
+  </style>
+</html>

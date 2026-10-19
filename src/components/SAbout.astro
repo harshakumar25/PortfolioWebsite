@@ -1,0 +1,1995 @@
+---
+// SAbout.astro - Architectural Editorial Stage with Dynamic 3D Kinetic Motion
+const achievements = {
+  stats: [
+    { label: 'CNCF Projects', value: '6 Orgs' },
+    { label: 'PRs Merged', value: '20+' },
+    { label: 'TryHackMe', value: 'Top 4%' },
+    { label: 'Stealth R&D', value: 'Active' },
+  ],
+  highlights: [
+    {
+      year: '2026',
+      tag: 'SHIPPED',
+      title: 'ASRO SHIPPED',
+      note: 'Multi-agent security orchestrator',
+    },
+    {
+      year: '2025',
+      tag: 'ML BUILD',
+      title: 'HIGH-IMPACT ML (24H)',
+      note: 'Ingredio : AI ingredient intelligence',
+    },
+    {
+      year: '2025',
+      tag: 'PLATFORM',
+      title: 'ADVOCATEBUDDY PLATFORM',
+      note: 'Automation-based legal workflow platform',
+    },
+    {
+      year: '2024',
+      tag: 'CNCF',
+      title: 'CNCF PR MERGED',
+      note: 'Konflux contribution',
+    },
+  ],
+}
+
+const thmBadges = [
+  {
+    id: '3-million-legend',
+    name: '3 Million Legend',
+    icon: '/images/badges/3-million-legend.png',
+    category: 'MILESTONE',
+    desc: 'Awarded to elite cybersecurity practitioners during TryHackMe 3M milestone.',
+  },
+  {
+    id: 'return-of-yeti',
+    name: 'The Return of the Yeti',
+    icon: '/images/badges/return-of-yeti.png',
+    category: 'CHALLENGE',
+    desc: 'Completed advanced winter cyber-defense and threat simulation.',
+  },
+  {
+    id: 'advent-of-cyber-2025',
+    name: 'Advent of Cyber 2025',
+    icon: '/images/badges/advent-of-cyber-2025.png',
+    category: 'EVENT',
+    desc: 'Full completion of the annual offensive & defensive training event.',
+  },
+  {
+    id: 'the-course-awakens',
+    name: 'The Course Awakens',
+    icon: '/images/badges/the-course-awakens.png',
+    category: 'TRAINING',
+    desc: 'Mastery of fundamental red/blue security methodology.',
+  },
+  {
+    id: 'logging-legend',
+    name: 'Logging Legend',
+    icon: '/images/badges/logging-legend.png',
+    category: 'DEFENSE',
+    desc: 'Detection engineering, SIEM telemetry, and forensic log correlation.',
+  },
+  {
+    id: 'intro-to-security',
+    name: 'Introduction to Security..',
+    icon: '/images/badges/intro-to-security.png',
+    category: 'FOUNDATION',
+    desc: 'Core architecture of security hygiene, defensive shields, and cryptosystems.',
+  },
+  {
+    id: 'cat-linux-txt',
+    name: 'cat linux.txt',
+    icon: '/images/badges/cat-linux-txt.png',
+    category: 'LINUX',
+    desc: 'Linux kernel internals, shell scripting, file permissions & privilege escalation.',
+  },
+  {
+    id: 'world-wide-web',
+    name: 'World Wide Web',
+    icon: '/images/badges/world-wide-web.png',
+    category: 'WEB',
+    desc: 'Deep exploration of web protocols, client-server models & packet forensics.',
+  },
+  {
+    id: 'webbed',
+    name: 'Webbed',
+    icon: '/images/badges/webbed.png',
+    category: 'WEB EXPLOITATION',
+    desc: 'OWASP Top 10 vulnerabilities, injection vectors, and auth bypass exploits.',
+  },
+  {
+    id: '7-day-streak',
+    name: '7 Day Streak',
+    icon: '/images/badges/7-day-streak.png',
+    category: 'STREAK',
+    desc: '7 consecutive days of rigorous offensive security lab solves.',
+  },
+  {
+    id: '3-day-streak',
+    name: '3 Day Streak',
+    icon: '/images/badges/3-day-streak.png',
+    category: 'STREAK',
+    desc: '3 consecutive days of hacking labs and security assessments.',
+  },
+  {
+    id: 'first-four',
+    name: 'First Four',
+    icon: '/images/badges/first-four.png',
+    category: 'ROOMS',
+    desc: 'Successfully pwning and rooting initial target systems.',
+  },
+]
+---
+
+<section id="about" class="s-about js-about" data-intersect>
+  <!-- Overlapping 3D Kinetic Motion Canvas (Grows larger, broader & faster on scroll) -->
+  <div class="s__3d-canvas-wrapper js-3d-wrapper">
+    <canvas class="s__3d-canvas js-3d-canvas"></canvas>
+  </div>
+
+  <!-- Ambient Background Badges Orbital Motion System (Unobtrusive background orbit) -->
+  <div class="s__badges-orbit-stage js-badges-orbit" aria-hidden="true">
+    {
+      thmBadges.map((badge, index) => (
+        <div
+          class="s__orbit-badge js-orbit-badge js-open-thm-modal"
+          data-badge-index={index}
+          data-badge-id={badge.id}
+          data-badge-name={badge.name}
+          data-badge-cat={badge.category}
+          data-badge-desc={badge.desc}
+          title={`${badge.name} • ${badge.category}`}
+          role="button"
+          tabindex="0"
+        >
+          <div class="s__orbit-badge-inner">
+            <img
+              src={badge.icon}
+              alt={badge.name}
+              class="s__orbit-badge-img"
+              loading="lazy"
+              width="60"
+              height="66"
+            />
+          </div>
+          <div class="s__orbit-badge-tooltip">
+            <span class="s__orbit-tt-name">{badge.name}</span>
+            <span class="s__orbit-tt-cat">{badge.category}</span>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="s__container">
+    <!-- Top Header Bar -->
+    <header class="s__top-bar">
+      <div class="s__top-left">
+        <div class="s__brand-avatar-chip js-brand-avatar" title="Harsh Kumar">
+          <img
+            src="/images/harsh-profile.jpg"
+            alt="Harsh Kumar"
+            class="s__brand-avatar-img"
+            width="36"
+            height="36"
+          />
+          <span class="s__brand-avatar-dot"></span>
+        </div>
+        <span class="s__brand-name">HARSH KUMAR</span>
+      </div>
+      <div class="s__top-right">
+        <span>BUILD</span>
+        <span class="s__slash">/</span>
+        <span>AUTOMATE</span>
+        <span class="s__slash">/</span>
+        <span>SECURE</span>
+        <span class="s__slash">/</span>
+        <span>OPEN SOURCE</span>
+      </div>
+    </header>
+
+    <!-- Main Architectural 3-Column Stage -->
+    <div class="s__stage">
+      <!-- Left Column: Guide Rail & Coordinates -->
+      <aside class="s__rail-left">
+        <div class="s__rail-top-dot">●</div>
+
+        <nav class="s__rail-nav">
+          <span class="s__rail-step">01 / DEV</span>
+          <span class="s__rail-step">02 / OPS</span>
+          <span class="s__rail-step">03 / SEC</span>
+          <span class="s__rail-step">04 / OSS</span>
+          <span class="s__rail-step">05 / ML</span>
+        </nav>
+
+        <div class="s__rail-coords">
+          <svg class="s__target-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="3"/>
+            <line x1="12" y1="1" x2="12" y2="5"/>
+            <line x1="12" y1="19" x2="12" y2="23"/>
+            <line x1="1" y1="12" x2="5" y2="12"/>
+            <line x1="19" y1="12" x2="23" y2="12"/>
+          </svg>
+          <span class="s__coords-text">DELHI / MUMBAI, IN</span>
+        </div>
+      </aside>
+
+      <!-- Center Column: Main Headline, Narrative & Tech Badges -->
+      <main class="s__main-narrative">
+        <div class="s__tag-line">
+          <span class="s__tag-dot">●</span>
+          <span>OPEN SOURCE CONTRIBUTOR &nbsp;/&nbsp; FULLSTACK DEVELOPER &nbsp;/&nbsp; SECURITY BUILDER</span>
+        </div>
+
+        <h2 class="s__headline">
+          I build the infrastructure behind
+          <span class="s__hl-emerald">reliable clusters,</span>
+          and
+          <span class="s__hl-emerald">the security tools</span>
+          that test them.
+        </h2>
+
+        <div class="s__paragraphs">
+          <p>
+            Upstream contributor across <strong>Kubernetes</strong>, <strong>KubeStellar</strong>, <strong>Kyverno</strong>, <strong>Cilium</strong>, <strong>Antrea</strong>, <strong>Kubescape</strong>, and <strong>Konflux</strong>. I write <strong>Go</strong>, <strong>Rust</strong>, and <strong>eBPF</strong> : the plumbing that keeps clusters alive: admission webhooks, OVS flow reconcilers, kernel-space packet filters, Tekton pipeline bundles.
+          </p>
+
+          <p>
+            <strong>Major Projects:</strong> <strong>ASRO</strong> : an autonomous multi-agent offensive security orchestrator running a 16-phase pipeline over 103 attack playbooks. <strong>Ingredio</strong> : high-impact ML ingredient intelligence engine engineered in a 24-hour hackathon. <strong>AdvocateBuddy</strong> : an end-to-end automation-based legal workflow platform and law-automation engine engineered for advocates and LLB aspirants. And <strong>bhnexura.com</strong>, the official admissions portal I maintain as intern.
+          </p>
+
+          <p>
+            Signal: <strong>HackerOne Researcher</strong>, <strong>Top 4%</strong> on TryHackMe, merged PRs on <strong>KubeStellar (#830)</strong> & <strong>Kyverno (#15063)</strong>, active streak <strong>5 PRs merged, 3 bugs resolved, 20 issues opened</strong> on Konflux · <strong>Top 2% contributor</strong>.
+            <button
+              type="button"
+              class="s__thm-orbit-pill js-open-thm-modal"
+              title="Click to view all 12 TryHackMe badges"
+            >
+              <span class="s__thm-orbit-dot"></span>
+              <span>12 VERIFIED BADGES [VIEW HUD] ↗</span>
+            </button>
+          </p>
+
+          <div class="s__collab-banner">
+            <span class="s__collab-dot">●</span>
+            <span class="s__collab-text">
+              <strong>Open to collaborate</strong> on high-impact <strong>Machine Learning</strong>, <strong>Applied AI</strong>, and <strong>Cyber Security</strong> projects.
+            </span>
+          </div>
+        </div>
+
+        <!-- Tech Chips / Badges Row -->
+        <div class="s__tech-chips">
+          <div class="s__chip">
+            <svg class="s__chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L3.5 6.9v9.8L12 21.6l8.5-4.9V6.9L12 2zm0 2.3l6.5 3.7v7.5L12 19.3 5.5 15.5V8L12 4.3zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+            </svg>
+            <span>KUBERNETES</span>
+          </div>
+
+          <div class="s__chip">
+            <svg class="s__chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2zm0 2.2L5.8 7.6v6.8L12 17.8l6.2-3.4V7.6L12 4.2z"/>
+            </svg>
+            <span>KUBESTELLAR</span>
+          </div>
+
+          <div class="s__chip">
+            <svg class="s__chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.54-3.14 8.79-7 9.88-3.86-1.09-7-5.34-7-9.88V6.3l7-3.12z"/>
+            </svg>
+            <span>KYVERNO</span>
+          </div>
+
+          <div class="s__chip">
+            <svg class="s__chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a4 4 0 0 0-4 4c0 1.2.5 2.2 1.4 3A4 4 0 0 0 6 12a4 4 0 0 0 4 4c.9 0 1.7-.3 2.4-.8.7.5 1.5.8 2.4.8a4 4 0 0 0 4-4c0-1.2-.5-2.2-1.4-3 .9-.8 1.4-1.8 1.4-3a4 4 0 0 0-4-4c-1 0-1.8.4-2.4 1A3.9 3.9 0 0 0 12 2z"/>
+            </svg>
+            <span>CILIUM / eBPF</span>
+          </div>
+
+          <div class="s__chip">
+            <svg class="s__chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 16v1a2 2 0 0 1-2 2H3m13-3l3-3m-3 3l3 3M8 8V7a2 2 0 0 1 2-2h11M8 8L5 5m3 3l-3 3"/>
+            </svg>
+            <span>ANTREA</span>
+          </div>
+
+          <div class="s__chip">
+            <svg class="s__chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L4 7v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V7l-8-5zm0 2.2l6 3.8v5c0 3.8-2.6 7.4-6 8.5-3.4-1.1-6-4.7-6-8.5V8l6-3.8z"/>
+            </svg>
+            <span>KUBESCAPE</span>
+          </div>
+
+          <div class="s__chip">
+            <svg class="s__chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2zm0 2.31L5.34 8v8L12 19.69 18.66 16V8L12 4.31z"/>
+            </svg>
+            <span>KONFLUX</span>
+          </div>
+
+          <div class="s__chip">
+            <span class="s__chip-go">GO</span>
+            <span class="s__chip-slash">/</span>
+            <span>RUST</span>
+            <svg class="s__chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M10 8h4a2 2 0 0 1 0 4h-4zm0 4h4l3 4"/>
+            </svg>
+          </div>
+
+          <div class="s__chip">
+            <svg class="s__chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="4 17 10 11 4 5"/>
+              <line x1="12" y1="19" x2="20" y2="19"/>
+            </svg>
+            <span>ASRO &bull; STEALTH R&D</span>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Column: Years & Milestone Timeline -->
+      <aside class="s__rail-right">
+        <div class="s__years-hero">
+          <span class="s__years-num">2024 / 2026</span>
+          <div class="s__online-badge">
+            <span class="s__online-dot"></span>
+            <span class="s__online-text">SYSTEM / ONLINE</span>
+          </div>
+        </div>
+
+        <div class="s__timeline-track">
+          {
+            achievements.highlights.map((h, i) => (
+              <div class="s__timeline-node">
+                <div class="s__node-bullet">
+                  <span class:list={['s__node-dot', { 'is-accent': i === 0 }]}></span>
+                  {i < achievements.highlights.length - 1 && <span class="s__node-line"></span>}
+                </div>
+                <div class="s__node-content">
+                  <div class="s__node-meta">
+                    <span class="s__node-year">{h.year}</span>
+                    <span class="s__node-title">{h.title}</span>
+                  </div>
+                  <div class="s__node-desc">{h.note}</div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Meter Bar -->
+        <div class="s__meter-box">
+          <div class="s__meter-header">
+            <span>KONFLUX &nbsp;/&nbsp; TOP 2%</span>
+            <span class="s__meter-pct">TOP 2%</span>
+          </div>
+          <div class="s__meter-bar">
+            <div class="s__meter-fill" style="width: 82%;"></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Bottom Action Bar / Strong Deadly Combo Statement -->
+    <footer class="s__bottom-bar">
+      <div class="s__about-deadly">
+        <div class="s__about-deadly-badge">
+          <span class="s__about-deadly-led"></span>
+          <span class="s__about-deadly-tag">CORE IDENTITY</span>
+        </div>
+        <div class="s__about-deadly-text">
+          <span class="s__about-deadly-strong">DEADLY COMBINATION OF SECURITY &amp; DEVELOPER</span>
+          <span class="s__about-deadly-sub">ENGINEERING AT HIGH VELOCITY · AUDITING WITH HACKER PARANOIA</span>
+        </div>
+      </div>
+
+      <div class="s__bottom-center">
+        <span>SIGNAL</span>
+        <span class="s__slash">/</span>
+        <span>2024 / 2026</span>
+      </div>
+
+      <a href="#work" class="s__bottom-more js-scroll-work">
+        <span>EXPLORE WORK</span>
+        <span class="s__arrow">&rarr;</span>
+      </a>
+    </footer>
+  </div>
+
+  <!-- TryHackMe Badges Modal Dialog (Matching exact uploaded Badges UI) -->
+  <div class="thm-modal js-thm-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="TryHackMe Badges">
+    <div class="thm-modal__backdrop js-thm-modal-close"></div>
+    <div class="thm-modal__dialog">
+      <div class="thm-modal__header">
+        <div class="thm-modal__title-wrap">
+          <h3 class="thm-modal__title">Badges</h3>
+          <span class="thm-modal__subtitle">TRYHACKME &bull; TOP 4% VERIFIED SECURITY CREDENTIALS</span>
+        </div>
+        <button type="button" class="thm-modal__close-btn js-thm-modal-close" aria-label="Close Badges Modal">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="thm-modal__body">
+        <div class="thm-modal__grid">
+          {
+            thmBadges.map((badge) => (
+              <div class="thm-modal__item" title={`${badge.name}: ${badge.desc}`}>
+                <div class="thm-modal__badge-wrap">
+                  <img
+                    src={badge.icon}
+                    alt={badge.name}
+                    class="thm-modal__badge-img"
+                    loading="lazy"
+                    width="100"
+                    height="110"
+                  />
+                </div>
+                <span class="thm-modal__badge-title">{badge.name}</span>
+                <span class="thm-modal__badge-cat">{badge.category}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="thm-modal__footer">
+        <div class="thm-modal__footer-meta">
+          <span class="thm-modal__status-dot">●</span>
+          <span>12 OF 12 RECOGNIZED BADGES MERGED INTO VERIFIED SECURITY PROFILE</span>
+        </div>
+        <a
+          href="https://tryhackme.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="thm-modal__footer-link"
+        >
+          <span>TRYHACKME PROFILE</span>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Emitter from '../utils/Emitter'
+  import Ticker from '../utils/Ticker'
+  import * as THREE from 'three'
+
+  class AboutSectionController {
+    el: HTMLElement
+    wrapper3D: HTMLElement
+    canvas3D: HTMLCanvasElement
+
+    threeRenderer: THREE.WebGLRenderer
+    threeScene: THREE.Scene
+    threeCamera: THREE.PerspectiveCamera
+    threeMasterGroup: THREE.Group
+
+    // 3D Geometry Groups & Meshes: Exactly 2 orbital circles/rings + core
+    gyroGroup: THREE.Group
+    ringOuter: THREE.Mesh
+    ringEquatorial: THREE.Mesh
+    coreSphere: THREE.Mesh
+
+    mouse = {
+      x: 0,
+      y: 0,
+      targetX: 0,
+      targetY: 0,
+    }
+
+    // Scroll state with smooth interpolation
+    scrollProgress: number = 0
+    smoothProgress: number = 0
+    scrollVelocity: number = 0
+    lastScrollY: number = 0
+    isPaused: boolean = true
+
+    // Dynamic scale and motion metrics
+    currentScale: number = 1.0
+    currentMotionSpeed: number = 1.0
+
+    constructor() {
+      this.el = document.querySelector('.js-about')
+      if (!this.el) return
+
+      this.wrapper3D = this.el.querySelector('.js-3d-wrapper')
+      this.canvas3D = this.el.querySelector('.js-3d-canvas')
+
+      if (document.readyState === 'complete') {
+        Ticker.nextTick(this.init, this)
+      } else {
+        Emitter.once('siteLoaded', this.init, this)
+      }
+    }
+
+    init() {
+      this.init3DScene()
+      this.bindEvents()
+    }
+
+    init3DScene() {
+      if (!this.canvas3D || !this.wrapper3D) return
+
+      const width = this.wrapper3D.clientWidth || window.innerWidth
+      const height = this.wrapper3D.clientHeight || 750
+
+      this.threeScene = new THREE.Scene()
+      this.threeCamera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100)
+      this.threeCamera.position.z = 7.2
+
+      this.threeRenderer = new THREE.WebGLRenderer({
+        canvas: this.canvas3D,
+        alpha: true,
+        antialias: true,
+        powerPreference: 'high-performance',
+      })
+      this.threeRenderer.setSize(width, height)
+      this.threeRenderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2))
+
+      // Master 3D Group
+      this.threeMasterGroup = new THREE.Group()
+      this.threeScene.add(this.threeMasterGroup)
+
+      // Gyroscopic container for layered rotation
+      this.gyroGroup = new THREE.Group()
+      this.threeMasterGroup.add(this.gyroGroup)
+
+      // Color scheme: charcoal #161616 and emerald green #0e4a2f
+      const darkColor = 0x161616
+      const emeraldColor = 0x0e4a2f
+
+      // 1. Broad Outer Orbital Ring (Spanning across slide)
+      const ringOuterGeo = new THREE.TorusGeometry(3.8, 0.016, 8, 96)
+      const ringOuterMat = new THREE.MeshBasicMaterial({
+        color: darkColor,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.22,
+      })
+      this.ringOuter = new THREE.Mesh(ringOuterGeo, ringOuterMat)
+      this.ringOuter.rotation.x = Math.PI * 0.25
+      this.gyroGroup.add(this.ringOuter)
+
+      // 2. Middle Equatorial Orbital Ring (Emerald Green)
+      const ringEqGeo = new THREE.TorusGeometry(3.1, 0.014, 8, 80)
+      const ringEqMat = new THREE.MeshBasicMaterial({
+        color: emeraldColor,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.32,
+      })
+      this.ringEquatorial = new THREE.Mesh(ringEqGeo, ringEqMat)
+      this.ringEquatorial.rotation.x = -Math.PI * 0.38
+      this.ringEquatorial.rotation.y = Math.PI * 0.15
+      this.gyroGroup.add(this.ringEquatorial)
+
+      // 3. Core Geodesic Wireframe Cluster Sphere
+      const sphereGeo = new THREE.IcosahedronGeometry(1.5, 2)
+      const sphereMat = new THREE.MeshBasicMaterial({
+        color: darkColor,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.16,
+      })
+      this.coreSphere = new THREE.Mesh(sphereGeo, sphereMat)
+      this.gyroGroup.add(this.coreSphere)
+
+      // Initial position: overlaps half of the slide (positioned towards the right-center,
+      // creating an overlapping spatial presence that extends across the center-right to right edge)
+      this.updateGroupPlacement(width)
+    }
+
+    updateGroupPlacement(width: number) {
+      if (width < 768) {
+        this.threeMasterGroup.position.set(0, 0.4, -1.0)
+      } else if (width < 1024) {
+        this.threeMasterGroup.position.set(0.8, 0.1, 0)
+      } else {
+        // Desktop: Positioned to overlap across the center-right reading column and right rail
+        this.threeMasterGroup.position.set(1.1, 0.15, 0)
+      }
+    }
+
+    bindEvents() {
+      window.addEventListener('resize', this.onResize.bind(this))
+
+      window.addEventListener('mousemove', (e: MouseEvent) => {
+        const cx = window.innerWidth / 2
+        const cy = window.innerHeight / 2
+        this.mouse.targetX = (e.clientX - cx) / cx
+        this.mouse.targetY = (e.clientY - cy) / cy
+      })
+
+      this.el.addEventListener('intersect', ((e: CustomEvent) => {
+        this.isPaused = !e.detail.isIntersecting
+        if (!this.isPaused) {
+          Emitter.on('tick', this.tick, this)
+        } else {
+          Emitter.off('tick', this.tick, this)
+        }
+      }) as EventListener)
+
+      Emitter.on('scroll', (scrollY: number) => {
+        const rect = this.el.getBoundingClientRect()
+        const total = window.innerHeight + rect.height
+        const current = window.innerHeight - rect.top
+        this.scrollProgress = Math.max(0, Math.min(1, current / total))
+
+        // Compute instant scroll velocity
+        const delta = Math.abs(scrollY - this.lastScrollY)
+        this.scrollVelocity = Math.min(delta * 0.05, 3.5)
+        this.lastScrollY = scrollY
+      })
+
+      // Smooth scroll to work
+      const scrollBtn = this.el.querySelector('.js-scroll-work')
+      scrollBtn?.addEventListener('click', (e) => {
+        e.preventDefault()
+        const target = document.querySelector('#work')
+        if (target) {
+          if (window.lenis) {
+            window.lenis.scrollTo(target, { duration: 1.4 })
+          } else {
+            target.scrollIntoView({ behavior: 'smooth' })
+          }
+        }
+      })
+    }
+
+    onResize() {
+      if (!this.threeRenderer || !this.threeCamera || !this.wrapper3D) return
+      const width = this.wrapper3D.clientWidth || window.innerWidth
+      const height = this.wrapper3D.clientHeight || 750
+
+      this.threeCamera.aspect = width / height
+      this.threeCamera.updateProjectionMatrix()
+      this.threeRenderer.setSize(width, height)
+
+      this.updateGroupPlacement(width)
+    }
+
+    tick(time: number) {
+      if (this.isPaused || !this.threeMasterGroup || !this.threeRenderer) return
+
+      // Smoothly interpolate scroll progress and velocity (LERP)
+      this.smoothProgress += (this.scrollProgress - this.smoothProgress) * 0.08
+      this.scrollVelocity *= 0.92
+
+      // DYNAMIC BECOMING LARGER & BROADER ON SCROLL (AND VICE-VERSA)
+      // When scrolling down (progress 0 -> 1):
+      // Target scale expands from 0.95 up to 1.85 (broader, larger, more commanding spatial presence)
+      const targetScale = 0.95 + this.smoothProgress * 0.95
+      this.currentScale += (targetScale - this.currentScale) * 0.08
+      this.threeMasterGroup.scale.set(this.currentScale, this.currentScale, this.currentScale)
+
+      // DYNAMIC MORE MOTION AS PER SCROLL (AND VICE-VERSA)
+      // As scroll advances down, rotation speed intensifies from 1.0x baseline to 4.2x + scroll velocity
+      const targetSpeed = 1.0 + this.smoothProgress * 3.2 + this.scrollVelocity * 1.5
+      this.currentMotionSpeed += (targetSpeed - this.currentMotionSpeed) * 0.08
+
+      // Smooth mouse tilt tracking
+      this.mouse.x += (this.mouse.targetX - this.mouse.x) * 0.05
+      this.mouse.y += (this.mouse.targetY - this.mouse.y) * 0.05
+
+      // Base time step multiplied by scroll-driven motion factor
+      const dt = 0.00075 * this.currentMotionSpeed
+      const scrollAngle = this.smoothProgress * Math.PI * 4.2
+
+      // Multi-axis gyroscopic rotations
+      if (this.ringOuter) {
+        this.ringOuter.rotation.z += dt * 0.65
+        this.ringOuter.rotation.y = Math.sin(time * 0.0004) * 0.25 + this.smoothProgress * 1.5
+      }
+
+      if (this.ringEquatorial) {
+        // Counter-rotating ring with dynamic inclination
+        this.ringEquatorial.rotation.z -= dt * 0.95
+        this.ringEquatorial.rotation.x = -Math.PI * 0.38 + Math.cos(time * 0.0005) * 0.25 - this.smoothProgress * 1.8
+      }
+
+      if (this.coreSphere) {
+        this.coreSphere.rotation.y += dt * 1.4
+        this.coreSphere.rotation.x += dt * 0.7
+      }
+
+      // Tilt entire master group toward cursor
+      this.threeMasterGroup.rotation.y = this.mouse.x * 0.45
+      this.threeMasterGroup.rotation.x = -this.mouse.y * 0.35
+
+      // Slight camera breadth adjustment on scroll
+      this.threeCamera.position.z = 7.2 - this.smoothProgress * 0.8
+
+      this.threeRenderer.render(this.threeScene, this.threeCamera)
+    }
+  }
+
+  // Ambient Orbital Badges Controller
+  class BadgesOrbitController {
+    container: HTMLElement
+    badges: HTMLElement[]
+    currentAngle: number = 0
+    hoveredIndex: number = -1
+    isPaused: boolean = false
+    rafId: number | null = null
+    width: number = 0
+    height: number = 0
+
+    constructor(container: HTMLElement) {
+      this.container = container
+      this.badges = Array.from(container.querySelectorAll('.js-orbit-badge'))
+      if (!this.badges.length) return
+      this.updateDimensions()
+      this.bindEvents()
+      this.animate()
+    }
+
+    updateDimensions = () => {
+      const rect = this.container.getBoundingClientRect()
+      this.width = rect.width || window.innerWidth
+      this.height = rect.height || 650
+    }
+
+    bindEvents() {
+      window.addEventListener('resize', this.updateDimensions, { passive: true })
+
+      this.badges.forEach((badge, idx) => {
+        badge.addEventListener('mouseenter', () => {
+          this.hoveredIndex = idx
+          badge.classList.add('is-hovered')
+        })
+        badge.addEventListener('mouseleave', () => {
+          this.hoveredIndex = -1
+          badge.classList.remove('is-hovered')
+        })
+      })
+
+      const aboutEl = document.querySelector('#about')
+      if (aboutEl) {
+        aboutEl.addEventListener('intersect', ((e: CustomEvent) => {
+          this.isPaused = !e.detail.isIntersecting
+          if (!this.isPaused && !this.rafId) {
+            this.animate()
+          }
+        }) as EventListener)
+      }
+    }
+
+    animate = () => {
+      if (this.isPaused) {
+        this.rafId = null
+        return
+      }
+
+      // Gentle orbital circulation; slower when examining a badge
+      const speed = this.hoveredIndex >= 0 ? 0.0006 : 0.0022
+      this.currentAngle += speed
+
+      const width = this.width || window.innerWidth
+      const height = this.height || 650
+
+      // Elliptical orbit center and radii
+      const cx = width * 0.52
+      const cy = height * 0.50
+      const rx = Math.min(width * 0.44, 520)
+      const ry = Math.min(height * 0.36, 230)
+
+      this.badges.forEach((badge, idx) => {
+        if (idx === this.hoveredIndex) {
+          badge.style.opacity = '1'
+          badge.style.zIndex = '100'
+          return
+        }
+
+        const angle = this.currentAngle + (idx / this.badges.length) * Math.PI * 2
+        const cos = Math.cos(angle)
+        const sin = Math.sin(angle)
+        // 3D tilted orbit plane (-15 degrees)
+        const x = cx + cos * rx - 29
+        const y = cy + sin * ry - cos * 24 - 32
+
+        // Depth projection: badges closer to viewer have higher scale and slightly higher opacity
+        const depth = (sin + 1) * 0.5 // 0.0 (back) to 1.0 (front)
+        const scale = 0.72 + depth * 0.28
+        const opacity = 0.22 + depth * 0.2
+
+        badge.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) scale(${scale.toFixed(3)})`
+        badge.style.opacity = `${opacity.toFixed(3)}`
+        badge.style.zIndex = sin > 0 ? '4' : '1'
+      })
+
+      this.rafId = requestAnimationFrame(this.animate)
+    }
+  }
+
+  // Initialize 3D Stage & Orbit Badges
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      new AboutSectionController()
+      const orbitEl = document.querySelector('.js-badges-orbit') as HTMLElement | null
+      if (orbitEl) new BadgesOrbitController(orbitEl)
+    }, { once: true })
+  } else {
+    new AboutSectionController()
+    const orbitEl = document.querySelector('.js-badges-orbit') as HTMLElement | null
+    if (orbitEl) new BadgesOrbitController(orbitEl)
+  }
+
+  // TryHackMe Badges Modal Controller
+  function initBadgesModal() {
+    const modal = document.querySelector('.js-thm-modal')
+    if (!modal) return
+
+    const openButtons = document.querySelectorAll('.js-open-thm-modal, .js-thm-badge-trigger')
+    const closeButtons = document.querySelectorAll('.js-thm-modal-close')
+
+    const openModal = () => {
+      modal.classList.add('is-active')
+      modal.setAttribute('aria-hidden', 'false')
+      document.body.style.overflow = 'hidden'
+    }
+
+    const closeModal = () => {
+      modal.classList.remove('is-active')
+      modal.setAttribute('aria-hidden', 'true')
+      document.body.style.overflow = ''
+    }
+
+    openButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault()
+        openModal()
+      })
+    })
+
+    closeButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault()
+        closeModal()
+      })
+    })
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+        closeModal()
+      }
+    })
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBadgesModal, { once: true })
+  } else {
+    initBadgesModal()
+  }
+</script>
+
+<style lang="scss">
+  .s-about {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    box-sizing: border-box;
+    background: color(primary);
+    color: color(secondary);
+    border-top: 1px solid color(secondary);
+    border-bottom: 1px solid color(secondary);
+    overflow: hidden;
+
+    /* Overlapping 3D Canvas wrapper:
+       Positioned across the entire section with pointer-events: none,
+       overlapping half of the slide with high visual impact! */
+    .s__3d-canvas-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.9;
+      mix-blend-mode: multiply;
+      overflow: hidden;
+    }
+
+    /* Ambient Background Badges Orbital Motion Stage */
+    .s__badges-orbit-stage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .s__orbit-badge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 58px;
+      height: 64px;
+      cursor: pointer;
+      pointer-events: auto;
+      user-select: none;
+      will-change: transform, opacity;
+      transition: filter 0.25s ease, opacity 0.25s ease;
+      filter: grayscale(20%) brightness(0.85);
+
+      .s__orbit-badge-inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .s__orbit-badge-img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        display: block;
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+      }
+
+      .s__orbit-badge-tooltip {
+        position: absolute;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%) translateY(4px);
+        padding: 0.4rem 0.7rem;
+        background: #101927;
+        border: 1px solid rgba(57, 231, 95, 0.45);
+        border-radius: 4px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 12px rgba(57, 231, 95, 0.25);
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        z-index: 120;
+
+        .s__orbit-tt-name {
+          display: block;
+          font: 700 10px / 1.2 font-family(fraktion);
+          color: #ffffff;
+          letter-spacing: 0.05em;
+        }
+
+        .s__orbit-tt-cat {
+          display: block;
+          font: 700 7.5px / 1 font-family(fraktion);
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #39e75f;
+          margin-top: 2px;
+        }
+      }
+
+      &.is-hovered,
+      &:hover {
+        z-index: 100 !important;
+        opacity: 1 !important;
+        filter: drop-shadow(0 0 16px rgba(57, 231, 95, 0.75)) brightness(1.18) !important;
+
+        .s__orbit-badge-inner {
+          transform: scale(1.35);
+        }
+
+        .s__orbit-badge-tooltip {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(-50%) translateY(0);
+        }
+      }
+    }
+
+    .s__container {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      box-sizing: border-box;
+      pointer-events: none;
+
+      .s__top-bar,
+      .s__rail-left,
+      .s__rail-right,
+      .s__headline,
+      .s__paragraphs,
+      .s__tech-chips,
+      .s__bottom-bar {
+        pointer-events: auto;
+      }
+    }
+
+    /* Top Bar */
+    .s__top-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.85rem 1.75rem;
+      border-bottom: 1px solid color(secondary);
+      box-sizing: border-box;
+      font: 600 11.5px / 1 font-family(fraktion);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+
+      @include mq(phone) {
+        padding: 0.65rem 0.85rem;
+        font-size: 10px;
+      }
+
+      .s__top-left {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+
+        .s__brand-avatar-chip {
+          position: relative;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: 1.5px solid rgba(color(secondary), 0.35);
+          padding: 1.5px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: color(primary);
+          flex-shrink: 0;
+
+          .s__brand-avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 15%;
+            display: block;
+          }
+
+          .s__brand-avatar-dot {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #39e75f;
+            border: 1.5px solid color(primary);
+            box-shadow: 0 0 6px #39e75f;
+          }
+        }
+      }
+
+      .s__brand-hk {
+        font-family: font-family(editorial);
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: normal;
+      }
+
+      .s__brand-dash {
+        opacity: 0.45;
+      }
+
+      .s__brand-name {
+        letter-spacing: 0.18em;
+      }
+
+      .s__top-right {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.85rem;
+        opacity: 0.85;
+
+        @include mq(tablet-sm) {
+          display: none;
+        }
+
+        .s__slash {
+          opacity: 0.35;
+        }
+      }
+    }
+
+    /* Main 3-Column Stage */
+    .s__stage {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      width: 100%;
+      min-height: 600px;
+      box-sizing: border-box;
+
+      @include mq(tablet) {
+        flex-direction: column;
+      }
+    }
+
+    /* Left Rail */
+    .s__rail-left {
+      flex-shrink: 0;
+      width: 5.5rem;
+      border-right: 1px solid rgba(color(secondary), 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2.25rem 0.5rem;
+      box-sizing: border-box;
+
+      @include mq(tablet) {
+        flex-direction: row;
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid rgba(color(secondary), 0.25);
+        padding: 0.75rem 1.25rem;
+      }
+
+      .s__rail-top-dot {
+        font-size: 9px;
+        color: #0e4a2f;
+      }
+
+      .s__rail-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 2.25rem;
+        align-items: center;
+
+        @include mq(tablet) {
+          flex-direction: row;
+          gap: 1rem;
+        }
+
+        .s__rail-step {
+          font: 600 10.5px / 1 font-family(fraktion);
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: color(secondary);
+          opacity: 0.75;
+          white-space: nowrap;
+          writing-mode: vertical-rl;
+          transform: rotate(180deg);
+
+          @include mq(tablet) {
+            writing-mode: horizontal-tb;
+            transform: none;
+            font-size: 9.5px;
+          }
+        }
+      }
+
+      .s__rail-coords {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        @include mq(tablet) {
+          flex-direction: row;
+        }
+
+        .s__target-icon {
+          width: 18px;
+          height: 18px;
+          color: color(secondary);
+          opacity: 0.65;
+        }
+
+        .s__coords-text {
+          font: 500 8.5px / 1 font-family(fraktion);
+          letter-spacing: 0.12em;
+          color: color(secondary);
+          opacity: 0.65;
+          white-space: nowrap;
+          writing-mode: vertical-rl;
+          transform: rotate(180deg);
+
+          @include mq(tablet) {
+            writing-mode: horizontal-tb;
+            transform: none;
+          }
+        }
+      }
+    }
+
+    /* Main Narrative Center Stage */
+    .s__main-narrative {
+      flex: 1 1 auto;
+      padding: 2.75rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      box-sizing: border-box;
+
+      @include mq(desktop-xs) {
+        padding: 2rem 2.25rem;
+      }
+
+      @include mq(phone) {
+        padding: 1.5rem 1rem;
+      }
+
+      .s__tag-line {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        font: 600 11px / 1 font-family(fraktion);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: color(secondary);
+        opacity: 0.9;
+        padding-bottom: 1.5rem;
+
+        @include mq(phone) {
+          font-size: 9px;
+          padding-bottom: 1rem;
+        }
+
+        .s__tag-dot {
+          color: #0e4a2f;
+          font-size: 8px;
+        }
+      }
+
+      .s__headline {
+        margin: 0;
+        padding: 0 0 2rem;
+        font: 400 min(3.8vw, 3.25rem) / 1.1 font-family(editorial);
+        letter-spacing: -0.015em;
+        color: color(secondary);
+
+        @include mq(tablet) {
+          font-size: min(5.5vw, 2.4rem);
+          padding-bottom: 1.5rem;
+        }
+
+        @include mq(phone) {
+          font-size: 1.75rem;
+          line-height: 1.2;
+        }
+
+        .s__hl-emerald {
+          color: #0e4a2f;
+          font-weight: 500;
+          font-style: italic;
+        }
+      }
+
+      .s__paragraphs {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        max-width: 820px;
+        padding-bottom: 2.5rem;
+
+        p {
+          margin: 0;
+          font: 400 16px / 1.6 font-family(editorial);
+          color: color(secondary);
+          opacity: 0.92;
+
+          @include mq(phone) {
+            font-size: 14.5px;
+            line-height: 1.55;
+          }
+
+          strong {
+            font-weight: 700;
+            color: color(secondary);
+          }
+        }
+
+        .s__collab-banner {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-top: 0.35rem;
+          padding: 0.85rem 1.15rem;
+          background: rgba(14, 74, 47, 0.08);
+          border-left: 2px solid #0e4a2f;
+          border-radius: 0 4px 4px 0;
+          font: 400 14.5px / 1.5 font-family(editorial);
+          color: color(secondary);
+
+          @include mq(phone) {
+            font-size: 13.5px;
+            padding: 0.7rem 0.85rem;
+          }
+
+          .s__collab-dot {
+            color: #0e4a2f;
+            font-size: 10px;
+            flex-shrink: 0;
+            animation: pulse-collab-dot 2s infinite ease-in-out;
+          }
+
+          strong {
+            font-weight: 700;
+            color: #0e4a2f;
+          }
+        }
+      }
+
+      @keyframes pulse-collab-dot {
+        0%, 100% { opacity: 0.4; transform: scale(0.9); }
+        50% { opacity: 1; transform: scale(1.2); }
+      }
+
+      /* TryHackMe Verified Badges Pill in Narrative */
+      .s__thm-orbit-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.28rem 0.65rem;
+        margin-left: 0.5rem;
+        vertical-align: middle;
+        font: 700 9.5px / 1 font-family(fraktion);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #0e4a2f;
+        background: rgba(14, 74, 47, 0.12);
+        border: 1px solid rgba(14, 74, 47, 0.35);
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        @include mq(phone) {
+          margin-top: 0.4rem;
+          margin-left: 0;
+          display: flex;
+          width: fit-content;
+        }
+
+        &:hover {
+          background: #0e4a2f;
+          color: #ffffff;
+          border-color: #0e4a2f;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(14, 74, 47, 0.25);
+
+          .s__thm-orbit-dot {
+            background: #39e75f;
+            box-shadow: 0 0 8px #39e75f;
+          }
+        }
+
+        .s__thm-orbit-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #0e4a2f;
+          animation: pulse-collab-dot 2s infinite ease-in-out;
+          transition: background 0.2s ease;
+        }
+      }
+
+      /* Tech Chips Row */
+      .s__tech-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        align-items: center;
+
+        .s__chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          padding: 0.45rem 0.85rem;
+          border: 1px solid rgba(color(secondary), 0.35);
+          border-radius: 4px;
+          background: rgba(color(primary), 0.8);
+          backdrop-filter: blur(4px);
+          font: 600 10px / 1 font-family(fraktion);
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: color(secondary);
+          transition: all 0.25s ease;
+          cursor: default;
+
+          &:hover {
+            border-color: color(secondary);
+            background: color(secondary);
+            color: color(primary);
+            transform: translateY(-2px);
+          }
+
+          .s__chip-icon {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+          }
+
+          .s__chip-go {
+            font-weight: 700;
+          }
+
+          .s__chip-slash {
+            opacity: 0.35;
+          }
+        }
+      }
+    }
+
+    /* Right Rail */
+    .s__rail-right {
+      flex-shrink: 0;
+      width: 18.5rem;
+      border-left: 1px solid rgba(color(secondary), 0.25);
+      padding: 2.5rem 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+
+      @include mq(desktop-xs) {
+        width: 16rem;
+        padding: 2rem 1.25rem;
+      }
+
+      @include mq(tablet) {
+        width: 100%;
+        border-left: 0;
+        border-top: 1px solid rgba(color(secondary), 0.25);
+        padding: 1.5rem 1.25rem;
+      }
+
+      .s__years-hero {
+        padding-bottom: 2rem;
+
+        .s__years-num {
+          display: block;
+          font: 300 5.25rem / 0.85 font-family(editorial);
+          letter-spacing: -0.04em;
+          color: color(secondary);
+
+          @include mq(phone) {
+            font-size: 4rem;
+          }
+        }
+
+        .s__online-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          margin-top: 0.75rem;
+          font: 600 10.5px / 1 font-family(fraktion);
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: color(secondary);
+
+          .s__online-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 6px #22c55e;
+          }
+        }
+      }
+
+      /* Timeline Track */
+      .s__timeline-track {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding-bottom: 2rem;
+
+        .s__timeline-node {
+          display: flex;
+          flex-direction: row;
+          align-items: stretch;
+          gap: 0.85rem;
+
+          .s__node-bullet {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 12px;
+            flex-shrink: 0;
+            padding-top: 4px;
+
+            .s__node-dot {
+              width: 7px;
+              height: 7px;
+              border-radius: 50%;
+              background: color(secondary);
+              opacity: 0.5;
+
+              &.is-accent {
+                background: #f59e0b;
+                opacity: 1;
+              }
+            }
+
+            .s__node-line {
+              flex: 1;
+              width: 1px;
+              background: rgba(color(secondary), 0.25);
+              margin: 4px 0;
+              min-height: 24px;
+            }
+          }
+
+          .s__node-content {
+            padding-bottom: 1.25rem;
+
+            .s__node-meta {
+              display: flex;
+              align-items: baseline;
+              gap: 0.5rem;
+              font: 700 11.5px / 1.2 font-family(fraktion);
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+
+              .s__node-year {
+                opacity: 0.55;
+              }
+
+              .s__node-title {
+                color: color(secondary);
+              }
+            }
+
+            .s__node-desc {
+              font: 400 11px / 1.35 font-family(editorial);
+              color: color(secondary);
+              opacity: 0.75;
+              padding-top: 0.2rem;
+            }
+          }
+        }
+      }
+
+      /* Bottom Progress Meter */
+      .s__meter-box {
+        border-top: 1px solid rgba(color(secondary), 0.2);
+        padding-top: 1rem;
+
+        .s__meter-header {
+          display: flex;
+          justify-content: space-between;
+          font: 600 10.5px / 1 font-family(fraktion);
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: color(secondary);
+          padding-bottom: 0.5rem;
+
+          .s__meter-pct {
+            opacity: 0.65;
+          }
+        }
+
+        .s__meter-bar {
+          width: 100%;
+          height: 6px;
+          background: rgba(color(secondary), 0.15);
+          border-radius: 3px;
+          overflow: hidden;
+
+          .s__meter-fill {
+            height: 100%;
+            background: #0e4a2f;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+
+    /* Bottom Bar */
+    .s__bottom-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      width: 100%;
+      padding: 0.85rem 1.75rem;
+      border-top: 1px solid color(secondary);
+      box-sizing: border-box;
+      font: 600 11.5px / 1 font-family(fraktion);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+
+      @include mq(tablet) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.75rem;
+        padding: 1rem;
+      }
+
+      @include mq(phone) {
+        padding: 0.85rem 0.65rem;
+        font-size: 10px;
+      }
+
+      .s__about-deadly {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-align: left;
+
+        @include mq(tablet) {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 0.4rem;
+        }
+
+        &-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          padding: 3px 8px;
+          border-radius: 999px;
+          background: rgba(36, 107, 69, 0.12);
+          border: 1px solid rgba(36, 107, 69, 0.3);
+          color: #0e4a2f;
+          font-weight: 800;
+          font-size: 9px;
+          letter-spacing: 0.14em;
+          flex-shrink: 0;
+        }
+
+        &-led {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #39e75f;
+          box-shadow: 0 0 6px #39e75f;
+          animation: s-about-led 2s infinite ease-in-out;
+        }
+
+        &-text {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+
+        &-strong {
+          font: 800 11.5px / 1.15 font-family(fraktion);
+          letter-spacing: 0.14em;
+          color: #0a3d1e;
+          background: linear-gradient(90deg, #0a3d1e 0%, #246b45 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        &-sub {
+          font: 600 8px / 1 font-family(fraktion);
+          letter-spacing: 0.1em;
+          color: rgba(22, 0, 0, 0.62);
+        }
+      }
+
+      .s__bottom-center {
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+
+        .s__slash {
+          opacity: 0.35;
+        }
+      }
+
+      .s__bottom-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        text-decoration: none;
+        color: color(secondary);
+        transition: transform 0.2s ease, opacity 0.2s ease;
+
+        &:hover {
+          opacity: 0.7;
+          transform: translateX(4px);
+        }
+
+        .s__arrow {
+          font-family: sans-serif;
+          font-weight: 700;
+        }
+      }
+    }
+
+    @keyframes s-about-led {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+      }
+    }
+  }
+
+  /* TryHackMe Badges Modal Dialog (Matching exact uploaded UI) */
+  .thm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &.is-active {
+      opacity: 1;
+      pointer-events: auto;
+
+      .thm-modal__dialog {
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    &__backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 16, 26, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    &__dialog {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 960px;
+      max-height: 90vh;
+      background: #101927; // Authentic TryHackMe modal navy canvas
+      border: 1px solid rgba(57, 231, 95, 0.28);
+      border-radius: 14px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8),
+                  0 0 32px rgba(57, 231, 95, 0.16);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: scale(0.94) translateY(12px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2rem 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+      @include mq(phone) {
+        padding: 1rem 1.25rem;
+      }
+    }
+
+    &__title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    &__title {
+      margin: 0;
+      font-family: font-family(editorial);
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1;
+
+      @include mq(phone) {
+        font-size: 1.75rem;
+      }
+    }
+
+    &__subtitle {
+      font: 600 10px / 1 font-family(fraktion);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #39e75f;
+    }
+
+    &__close-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: #39e75f;
+        color: #ffffff;
+        transform: rotate(90deg);
+      }
+    }
+
+    &__body {
+      padding: 2rem 2rem 1.5rem;
+      overflow-y: auto;
+      max-height: calc(90vh - 150px);
+
+      @include mq(phone) {
+        padding: 1.25rem 0.85rem;
+      }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1.5rem 1rem;
+
+      @include mq(desktop-xs) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @include mq(tablet) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem 0.75rem;
+      }
+
+      @include mq(phone) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem 0.5rem;
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0.85rem 0.5rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid transparent;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: default;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(57, 231, 95, 0.4);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
+                    0 0 16px rgba(57, 231, 95, 0.2);
+
+        .thm-modal__badge-img {
+          transform: scale(1.1);
+          filter: drop-shadow(0 0 14px rgba(57, 231, 95, 0.65));
+        }
+      }
+    }
+
+    &__badge-wrap {
+      width: 90px;
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+
+      @include mq(phone) {
+        width: 72px;
+        height: 78px;
+      }
+    }
+
+    &__badge-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+    }
+
+    &__badge-title {
+      font: 600 13px / 1.35 font-family(fraktion);
+      color: #f1f5f9;
+      letter-spacing: 0.02em;
+      min-height: 2.7em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mq(phone) {
+        font-size: 11.5px;
+      }
+    }
+
+    &__badge-cat {
+      margin-top: 0.35rem;
+      font: 700 8.5px / 1 font-family(fraktion);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #39e75f;
+      opacity: 0.85;
+    }
+
+    &__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+      @include mq(phone) {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+        padding: 0.85rem 1rem;
+      }
+    }
+
+    &__footer-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font: 500 10.5px / 1 font-family(fraktion);
+      letter-spacing: 0.1em;
+      color: #94a3b8;
+      text-transform: uppercase;
+    }
+
+    &__status-dot {
+      color: #39e75f;
+      font-size: 9px;
+      animation: pulse-hud 2s infinite ease-in-out;
+    }
+
+    &__footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font: 700 10.5px / 1 font-family(fraktion);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #39e75f;
+      text-decoration: none;
+      padding: 0.45rem 0.85rem;
+      border: 1px solid rgba(57, 231, 95, 0.3);
+      border-radius: 4px;
+      background: rgba(57, 231, 95, 0.08);
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #39e75f;
+        color: #101927;
+        box-shadow: 0 0 14px rgba(57, 231, 95, 0.5);
+      }
+    }
+  }
+</style>
