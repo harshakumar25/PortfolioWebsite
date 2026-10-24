@@ -24,10 +24,10 @@ import ASeparator from './ASeparator.astro'
           />
           <span class="s__hero-avatar-dot"></span>
         </span>
-        <span class="s__status-text">AVAILABLE FOR WORK</span>
-      </div>
-      <div class="s__status-right">
-        <span class="s__status-clock js-clock-time">04:20 am IST</span>
+        <div class="s__status-meta">
+          <span class="s__status-text">AVAILABLE FOR WORK</span>
+          <span class="s__status-clock js-clock-time">UTC+05:30 01:40 AM</span>
+        </div>
       </div>
     </div>
 
@@ -123,7 +123,7 @@ import ASeparator from './ASeparator.astro'
             minute: '2-digit',
             hour12: true,
           }).format(now)
-          clockEl.textContent = `${formatted.toLowerCase()} IST`
+          clockEl.textContent = `UTC+05:30  ${formatted}`
         } catch (e) {}
       }
 
@@ -478,6 +478,13 @@ import ASeparator from './ASeparator.astro'
         }
       }
 
+      .s__status-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        line-height: 1.15;
+      }
+
       .s__status-dot {
         width: 6px;
         height: 6px;
@@ -488,7 +495,14 @@ import ASeparator from './ASeparator.astro'
       }
 
       .s__status-clock {
+        font-size: 9.5px;
         font-weight: 700;
+        letter-spacing: 0.12em;
+        opacity: 0.85;
+
+        @include mq(phone) {
+          font-size: 8px;
+        }
       }
     }
 
